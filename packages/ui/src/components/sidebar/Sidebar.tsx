@@ -2,6 +2,7 @@ import {Badge, Tabs, TabType} from '../tabs';
 import {Properties} from './Properties';
 import {VideoSettings} from './VideoSettings';
 import {Threads} from './Threads';
+import {SceneGraph} from './SceneGraph';
 import {Console} from '../console';
 import {useInspection, useLogger} from '../../contexts';
 import {useEffect, useRef, useState} from 'preact/hooks';
@@ -84,6 +85,13 @@ export function Sidebar({setOpen}: SidebarProps) {
           type: TabType.Pane,
           icon: <ViewTimeline />,
           pane: <Threads />,
+        }}
+        {{
+          title: 'Scene Graph',
+          id: 'scene-graph-tab',
+          type: TabType.Pane,
+          icon: <AccountTree />,
+          pane: <SceneGraph />,
         }}
         {{
           title: errorCount > 0 ? `Console (${errorCount})` : 'Console',
